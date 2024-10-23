@@ -1,0 +1,186 @@
+/*BASE*/
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.7333333333;
+  color: #31353B;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/*BLOCK*/
+.btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  background-color: #F85A47;
+  font-weight: bold;
+  line-height: 0;
+  color: #FFFFFF;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.btn--orange {
+  width: 300px;
+  background-color: #FF9900;
+}
+
+.header {
+  margin: 50px 0 80px;
+}
+.header__inner {
+  max-width: 1000px;
+  width: 69.4444444444%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.nav {
+  font-weight: bold;
+  width: 291px;
+}
+.nav__contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__now {
+  color: #FF9900;
+}
+
+.footer {
+  background-color: #DBFFFF;
+  padding: 100px 0;
+  text-align: right;
+}
+.footer__inner {
+  max-width: 1000px;
+  width: 69.4444444444%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.footer__nav {
+  margin-bottom: 40px;
+  margin-left: auto;
+}
+
+/*index.html--------------------------------*/
+/*space*/
+.space {
+  margin-bottom: 120px;
+}
+.space__inner {
+  max-width: 1000px;
+  width: 69.4444444444%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.space__img {
+  width: 50%;
+}
+
+.about {
+  width: 44%;
+}
+.about__category {
+  color: #FF9900;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.about__title {
+  font-size: 48px;
+  line-height: 1.2083333333;
+  margin-bottom: 40px;
+}
+.about__text {
+  margin-bottom: 60px;
+}
+
+/*reviews*/
+.reviews__inner {
+  max-width: 1000px;
+  width: 69.4444444444%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.reviews__category {
+  color: #FF9900;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.reviews__title {
+  font-size: 48px;
+  line-height: 1.2083333333;
+  margin-bottom: 40px;
+}
+.reviews__post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  width: 47%;
+  padding: 45px 40px;
+  border: 1px #A3A3A3 solid;
+  border-radius: 10px;
+  margin-bottom: 120px;
+}
+.card__text {
+  margin-bottom: 80px;
+}
+.card__profile {
+  display: flex;
+}
+.card__profile__text {
+  margin-left: 20px;
+}
+.card__profile__name {
+  font-weight: bold;
+}
+
+/*about.html------------------------------*/
+.real {
+  margin-bottom: 120px;
+}
+.real__inner {
+  max-width: 1000px;
+  width: 69.4444444444%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.real__title {
+  font-size: 48px;
+  line-height: 1.2083333333;
+  margin-bottom: 40px;
+}
+.real__text {
+  margin-bottom: 60px;
+}
+.real__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.real__post {
+  width: 30%;
+}
+/*# sourceMappingURL=style.css.map */
