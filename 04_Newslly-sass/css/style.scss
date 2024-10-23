@@ -1,0 +1,229 @@
+@charset "utf-u";
+
+$color-text: #888;
+$color-main: #202124;
+$color-accent: #fA6988;
+$color-bg: #f6f6f6;
+$color-time: #bbb;
+
+@mixin inner($mw: 800px) {
+    max-width: $mw;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin title-main {
+    color: $color-main;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: (31/24);
+    text-transform: uppercase;
+    padding-left: 10px;
+    border-left: solid 10px $color-accent;
+    margin-bottom: 30px;
+}
+
+@mixin card-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: (23/18);
+    color: $color-main;
+}
+
+
+body {
+    color: $color-text;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: (24/14);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* time */
+.time {
+    margin-top: 20px;
+    padding-left: 26px;
+    color: $color-time;
+    font-size: 12px;
+    background: url(../images/icon_time.png) no-repeat left center;
+}
+
+
+/*btn*/
+.btn {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    margin-left: auto;
+    padding: 14px;
+    background-color: $color-accent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn--black {
+    background-color: $color-main;
+}
+
+
+/*header*/
+.header {
+    padding: 30px 0 60px;
+    text-align: center;
+
+    @include inner();
+}
+
+
+/*footer*/
+.footer {
+    background-color: $color-main;
+    padding: 100px 0 40px;
+
+    &__copy {
+        color: $color-time;
+    }
+
+    &__inner {
+        @include inner();
+    }
+}
+
+/*index.html----------------------------------*/
+
+/*news*/
+.news {
+    @include inner();
+    margin-bottom: 60px;
+
+    &__more {
+        @include flex;
+        margin-bottom: -60px;
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__post {
+        width: (380/800)*100%;
+        margin-bottom: 60px;
+    }
+}
+
+.unit {
+    &__category {
+        color: $color-accent;
+        font-size: 12px;
+        font-weight: Oblique;
+        font-style: italic;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: (23/18);
+    }
+}
+
+/*trending*/
+.trending {
+    background-color: $color-bg;
+    padding: 60px 0;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__contents {
+        @include flex();
+    }
+
+    &__item {
+        width: (380/800)*100%;
+
+    }
+}
+
+.card {
+    background-color: #fff;
+
+    &__article {
+        padding: 35px;
+    }
+
+    &__title {
+        @include card-title();
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+/*about.html----------------------------------*/
+/*article*/
+.article {
+    margin-bottom: 60px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__post {
+        margin-bottom: 40px;
+    }
+
+    .unit__title {
+        padding-bottom: 10px;
+        border-bottom: $color-time 1px solid;
+    }
+}
+
+
+/*DISCOVERY*/
+.discovery {
+    background-color: $color-bg;
+    padding: 60px 0;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__contents {
+        @include flex();
+    }
+
+    &__item {
+        width: (240/800)*100%;
+    }
+}
