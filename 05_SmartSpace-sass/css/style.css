@@ -150,10 +150,15 @@ img {
 .card__profile {
   display: flex;
 }
-.card__profile__text {
+
+.profile__icon {
+  width: 48px;
+}
+.profile__text {
+  width: 163px;
   margin-left: 20px;
 }
-.card__profile__name {
+.profile__name {
   font-weight: bold;
 }
 
