@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+$color-accent: #ED145B;
+$color-btn: #EDAA14;
+$color-title: #2B2B2B;
+
+$breakpoint: (
+    "desctop": "screen and (min-width:560px)"
+    ) !default;
+
+
+@mixin inner ($w: 85%, $mw: 1300px) {
+    max-width: $mw;
+    width: $w;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin title {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: (46/38
+    );
+text-align: center;
+margin-bottom: 50px;
+}
+
+body {
+    font-family: Verdana;
+    font-size: 14px;
+    letter-spacing: (25em/1000);
+    line-height: (24/14);
+    color: #5A5A5A;
+}
+
+img {
+    vertical-align: bottom;
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+
+/*header*/
+.header {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    padding: 40px 0;
+    position: fixed;
+    z-index: 999;
+
+    &__inner {
+        @include inner();
+        @include flex();
+    }
+}
+
+.nav {
+    &__list {
+        @include flex();
+    }
+
+    &__item {
+        margin-left: 30px
+    }
+
+    &__active {
+        color: $color-accent;
+    }
+}
+
+
+/*footer*/
+.footer {
+    background-color: #000;
+    padding: 60px 0 160px;
+    color: #fff;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+
+/*共通部分*/
+.btn {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    width: fit-content;
+    padding: 2px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 25px 0 20px;
+}
+
+/*index.html--------------------------------------*/
+/*main*/
+.main {
+    background-color: #000;
+    color: #fff;
+    padding: 250px 0 150px;
+    margin-bottom: 80px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        font-size: 46px;
+        font-weight: bold;
+        line-height: (55/46);
+    }
+
+    &__accent {
+        color: $color-accent;
+    }
+
+    .btn {
+        background-color: $color-accent;
+        width: 200px;
+        text-align: center;
+        padding: 16px 0;
+    }
+}
+
+.post {
+    margin-bottom: 60px;
+}
+
+.updates {
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    img {
+        aspect-ratio: 16/9;
+    }
+}
