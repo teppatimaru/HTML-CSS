@@ -4,20 +4,28 @@ $color-accent: #ED145B;
 $color-btn: #EDAA14;
 $color-title: #2B2B2B;
 
-$breakpoint: (
-    "desctop": "screen and (min-width:560px)"
+$breakpoints: (
+    "desktop": "screen and (min-width:560px)"
     ) !default;
 
+@mixin m-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
 
-@mixin inner ($w: 85%, $mw: 1300px) {
+
+@mixin m-inner ($w: 85%, $mw: 1300px) {
     max-width: $mw;
     width: $w;
     margin-right: auto;
     margin-left: auto;
 }
 
+
 @mixin flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -57,9 +65,11 @@ img {
     padding: 40px 0;
     position: fixed;
     z-index: 999;
+    top: 0;
+    left: 0;
 
     &__inner {
-        @include inner();
+        @include m-inner();
         @include flex();
     }
 }
@@ -83,10 +93,11 @@ img {
 .footer {
     background-color: #000;
     padding: 60px 0 160px;
+    margin-top: 80px;
     color: #fff;
 
     &__inner {
-        @include inner();
+        @include m-inner();
     }
 }
 
@@ -106,23 +117,38 @@ img {
 /*index.html--------------------------------------*/
 /*main*/
 .main {
-    background-color: #000;
+    background: url(../images/bg_mainvisual.png) no-repeat center center;
     color: #fff;
     padding: 250px 0 150px;
     margin-bottom: 80px;
 
     &__inner {
-        @include inner();
+        @include m-inner();
     }
 
     &__title {
-        font-size: 46px;
+        font-size: 38px;
         font-weight: bold;
-        line-height: (55/46);
+        line-height: (55/38);
+        margin-bottom: 40px;
+        color: $color-title;
+    }
+
+    &__text {
+        margin-bottom: 80px;
     }
 
     &__accent {
         color: $color-accent;
+    }
+
+    @include m-query(desktop) {
+        text-align: center;
+
+        .btn {
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
 
     .btn {
@@ -139,14 +165,109 @@ img {
 
 .updates {
     &__inner {
-        @include inner();
+        @include m-inner();
     }
 
     &__title {
         @include title();
     }
 
+
     img {
         aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    @include m-query(desktop) {
+        .updates {
+
+            &__flex {
+                @include flex();
+            }
+
+            &__list {
+                width: 260px;
+            }
+
+            &__inner {
+                @include m-inner(69%, 900);
+            }
+        }
+    }
+}
+
+/*about.html--------------------------------------*/
+/*services*/
+.services {
+    &__inner {
+        margin-top: 180px;
+
+        @include m-inner();
+    }
+
+    &__title {
+        font-size: 38px;
+        font-weight: bold;
+        line-height: (55/38);
+        margin-bottom: 50px;
+        text-align: center;
+        color: $color-title;
+    }
+
+    @include m-query(desktop) {
+        &__post {
+            width: 420px;
+        }
+
+        &__flex {
+            @include flex();
+        }
+    }
+}
+
+
+
+.test {
+
+    margin-top: 80px;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #5A5A5A;
+    // background: url(../images/bg_testimonials.png) no-repeat center center;
+
+    &__me {
+        background-color: #FFFFFF;
+    }
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        font-size: 38px;
+        font-weight: bold;
+        line-height: (55/38);
+        margin-bottom: 50px;
+        text-align: center;
+        color: $color-title;
+    }
+
+    img {
+        margin-bottom: 37px;
+    }
+
+    &__text {
+        margin-bottom: 25px;
+        font-style: italic;
+        font-size: 16px;
+    }
+
+
+    .btn {
+        background-color: $color-btn;
+        padding: 16px 0;
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
