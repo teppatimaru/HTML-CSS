@@ -177,32 +177,24 @@ img {
   text-align: center;
   color: #2B2B2B;
 }
-@media screen and (min-width:560px) {
-  .services__post {
-    width: 420px;
-  }
-  .services__flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
+.services__flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .test {
   margin-top: 80px;
   text-align: center;
-  padding: 50px 0;
-  background-color: #5A5A5A;
-}
-.test__me {
-  background-color: #FFFFFF;
+  background: url(../images/bg_testimonials.png) no-repeat center center/cover;
 }
 .test__inner {
   max-width: 1300px;
   width: 85%;
   margin-right: auto;
   margin-left: auto;
+  background-color: #FFFFFF;
 }
 .test__title {
   font-size: 38px;

@@ -214,14 +214,8 @@ img {
         color: $color-title;
     }
 
-    @include m-query(desktop) {
-        &__post {
-            width: 420px;
-        }
-
-        &__flex {
-            @include flex();
-        }
+    &__flex {
+        @include flex();
     }
 }
 
@@ -231,16 +225,13 @@ img {
 
     margin-top: 80px;
     text-align: center;
-    padding: 50px 0;
-    background-color: #5A5A5A;
-    // background: url(../images/bg_testimonials.png) no-repeat center center;
+    // padding: 50px 0;
+    background: url(../images/bg_testimonials.png) no-repeat center center/cover;
 
-    &__me {
-        background-color: #FFFFFF;
-    }
 
     &__inner {
         @include m-inner();
+        background-color: #FFFFFF;
     }
 
     &__title {
