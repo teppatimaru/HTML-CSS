@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .btn01 {
+            border: 2px solid;
+            background-color: #ddd;
+            color: #000;
+        }
+
+        .bird {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+
+            /* animation:move 2s infinite; */
+        }
+
+        /*%で指定　これが簡単*/
+        @keyframes move {
+
+            0%,
+            100% {
+                transform: translateY(25px);
+            }
+
+            50% {
+                transform: translateY(0) scale(0.9) rotate(5deg);
+            }
+        }
+
+        .btn01:hover {
+            animation: purupuru .2s;
+        }
+
+        @keyframes purupuru {
+
+            0%,
+            100% {
+                transform: skew(0deg, 0deg);
+            }
+
+            25% {
+                transform: skew(2deg, 2deg);
+            }
+
+            75% {
+                transform: skew(-2deg, -2deg);
+            }
+        }
+
+        .loop {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .loop p {
+            font-size: 15vw;
+            white-space: nowrap;
+            padding-right: 0.5em;
+        }
+
+        .text03 {
+            animation: loop 50s -25s linear infinite;
+        }
+
+        .text04 {
+            animation: loop2 50s linear infinite;
+        }
+
+        @keyframes loop {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes loop2 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+        .slide {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slide__image {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slide 15s linear infinite;
+        }
+
+        .slide__image:nth-child(1) {
+            background-image: url(https://picsum.photos/800/600?random=1);
+            animation-delay: -2s;
+        }
+
+        .slide__image:nth-child(2) {
+            background-image: url(https://picsum.photos/800/600?random=2);
+            animation-delay: 3s;
+        }
+
+        .slide__image:nth-child(3) {
+            background-image: url(https://picsum.photos/800/600?random=3);
+            animation-delay: 8s;
+        }
+
+        @keyframes slide {
+
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+
+            6%,
+            33% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img class="bird" src="./bird.png" width="300" alt="">
+    <a class="btn01" href="#">練習</a>
+    <div class="loop">
+        <p class="text03">I LOVE WEB DESIGN　</p>
+        <p class="text04">I LOVE WEB DESIGN　</p>
+    </div>
+
+    <div class="slide">
+        <div class="slide__image"></div>
+        <div class="slide__image"></div>
+        <div class="slide__image"></div>
+    </div>
+</body>
+
+</html>
